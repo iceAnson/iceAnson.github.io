@@ -1,7 +1,8 @@
 ﻿---
-layout: default
+layout: post
 title: 工具篇-TraceView 
 description:让我们远离卡顿和黑屏
+category: blog
 ---
 ## 工具篇-TraceView ##
 ### 让我们远离卡顿和黑屏###
