@@ -45,10 +45,16 @@
 
 
       <section id="main_content">
-        <h1>
-<a id="ice的博客" class="anchor" href="#ice%E7%9A%84%E5%8D%9A%E5%AE%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>ice的博客</h1>
-
-<p>写不完的云淡风轻~</p>
+        <h1><a id="ice的博客" class="anchor" href="#ice%E7%9A%84%E5%8D%9A%E5%AE%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>ice的博客</h1>
+			<p>写不完的云淡风轻~</p>
+		<ul class="artical-list">
+			{% for post in site.posts %}
+			<li>{{ post.date | date_to_string }} 
+				<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+				<div class="title-desc">{{ post.description }}</div>
+			</li>
+			{% endfor %}
+		</ul>
       </section>
 
       <footer>
