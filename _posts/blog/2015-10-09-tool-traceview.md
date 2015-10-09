@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: 工具篇-TraceView 
-description: 让我们远离卡顿和黑屏 2015-10-08
+description: 让我们远离卡顿和黑屏 2015-10-09
 category: blog
 ---
 
