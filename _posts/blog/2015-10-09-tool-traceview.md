@@ -1,12 +1,11 @@
 ﻿---
 layout: post
 title: 工具篇-TraceView 
-description:让我们远离卡顿和黑屏
+description: 让我们远离卡顿和黑屏 2015-10-08
 category: blog
 ---
 
-## 工具篇-TraceView ##
-### 让我们远离卡顿和黑屏###
+## 让我们远离卡顿和黑屏##
 
 ### 一、与Traceview的不得已de 相逢 ###
 当我们被山一样的业务需求压倒喘不过气的时候，经常就有人跑到你身边说
