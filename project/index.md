@@ -2,18 +2,18 @@
 layout: home
 ---
 
-<div class="index-content forward">
+<div class="index-content project">
     <div class="section">
         <ul class="artical-cate">
             <li class="on"><a href="/"><span>Blog</span></a></li>
-            <li style="text-align:center"><a href="/forward"><span>不能错过的转载</span></a></li>
-            <li style="text-align:right"><a href="/feeling"><span>感同深受的体会</span></a></li>
+             <li style="text-align:center"><a href="/project"><span>CodeProject</span></a></li>
+            <li style="text-align:right"><a href="/profile"><span>Profile</span></a></li>
         </ul>
 
         <div class="cate-bar"><span id="cateBar"></span></div>
 
         <ul class="artical-list">
-        {% for post in site.categories.forward %}
+        {% for post in site.categories.project %}
             <li>
                 <h2>
                     <a href="{{ post.url }}">{{ post.title }}</a>
