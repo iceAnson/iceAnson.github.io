@@ -6,8 +6,8 @@ layout: home
     <div class="section">
         <ul class="artical-cate">
             <li class="on"><a href="/"><span>Blog</span></a></li>
-            <li style="text-align:center"><a href="/forward"><span>不能错过的转载</span></a></li>
-            <li style="text-align:right"><a href="/feeling"><span>感同深受的体会</span></a></li>
+            <li style="text-align:center"><a href="/project"><span>CodeProject</span></a></li>
+            <li style="text-align:right"><a href="/profile"><span>Profile</span></a></li>
         </ul>
 
         <div class="cate-bar"><span id="cateBar"></span></div>
