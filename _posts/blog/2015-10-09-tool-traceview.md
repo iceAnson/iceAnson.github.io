@@ -37,7 +37,7 @@ category: blog
 	```java
 	android.os.Debug.startMethodTrace(String tracename);```
 	>这是trace文件名称,如果你写trace_home，生成的文件名就是trace_home.trace
-	
+
 	代码结束时执行：
 	```java
 	andoird.os.Debug.stopMethodTrace();	```
@@ -75,7 +75,7 @@ category: blog
 	
 	(3)上图的底部区域：罗列了此次统计执行时间和对应的执行方法，这是我们要重点分析的对象；先熟悉几个重要的指标：
 	
-		a：(0)toplevel是顶级节点
+		a：toplevel是顶级节点
 			可以从这里一级一级看到有哪些子节点执行了了什么;
 			以及每个子节点执行的时间;
 			此节点的之后每个节点都有Parent和Children两个分支;
@@ -85,25 +85,33 @@ category: blog
 		d: Calls+RecurCalls/Total指调用次数+递归次数/总数 
 		e: Cpu Time/Call 每执行 一次该方法消费的时间（毫秒）
 		
-	**具体分析**
-	上图中底部区域图如下：（MDP抽风，上传不了图了- -，一定是代理坏了，口头描述吧）
+3、**具体分析**
+
+上图中底部区域图如下：（MDP抽风，上传不了图了- -，一定是代理坏了，口头描述吧）
 		
-		（1）展开0（toplevel）如下图
+（1）展开0（toplevel）如下图
 ![](http://7xnby9.com1.z0.glb.clouddn.com/top_level.jpg)
-上图检测到的5718ms主要消耗在Thread.run和NativieStart.main这两个上面，我们主要来看一下main里边做了什么东西，一直点击main的childeren直到这里：
+	
+（2）上图检测到的5718ms主要消耗在Thread.run和NativieStart.main这两个上面，我们主要来看一下main里边做了什么东西，一直点击main的childeren直到这里：
 ![](http://7xnby9.com1.z0.glb.clouddn.com/main_fenbu.jpg)
-这里开始出现了时间分布，TraversalRunable跟踪下去是计算绘制和实际绘制的时间，无法跟踪到业务代码,这部分的优化需要对布局优化，检查过度绘制；
+	
+（3）这里开始出现了时间分布，TraversalRunable跟踪下去是计算绘制和实际绘制的时间，无法跟踪到业务代码,这部分的优化需要对布局优化，检查过度绘制；
 我们我们主要看一下FlingRunnable做了什么，继续狂戳children直到这里：
 ![](http://7xnby9.com1.z0.glb.clouddn.com/fling_final.jpg)
-好了，业务代码全部都出现了，哪个方法调用了多少次，消耗了多少时间，一目了然；
-在这里，我们发现：
-getview调用了22次，消耗时间690ms
-getview 每次执行时间 31ms;时间越短性能越好
-fillResource(）调用了22次,消耗了192ms
-handleOtherType()调用了19次，消耗190ms
-这里调试的手机是魅蓝note,感觉稍微有点卡，不是很明显；
-从上边参数有两个优化点：fillResource（）改为只执行一次，handleOtherType的时间主要是消耗在：
-SkineEngine每次都执行了getResource()重新拿资源转为Drawable或者bitmap的缘故，需要对SkinEngine的资源ID和Drawable做缓存，可大量减少IO时间；
+	
+（4）好了，业务代码全部都出现了，哪个方法调用了多少次，消耗了多少时间，一目了然；在这里，我们发现：
+
+		getview调用了22次，消耗时间690ms
+		getview 每次执行时间 31ms;时间越短性能越好
+		fillResource(）调用了22次,消耗了192ms
+		handleOtherType()调用了19次，消耗190ms
+	
+（5）这里调试的手机是魅蓝note,感觉稍微有点卡，不是很明显；从上边参数有两个优化点：
+
+	a:fillResource（）改为只执行一次
+	b:handleOtherType的时间主要是消耗在：
+	  SkineEngine每次都执行了getResource()重新拿资源转为Drawable或者bitmap的缘故，
+	  需要对SkinEngine的资源ID和Drawable做缓存，可大量减少IO时间；
 ![](http://7xnby9.com1.z0.glb.clouddn.com/handleSetOther.jpg)
 
 Done
