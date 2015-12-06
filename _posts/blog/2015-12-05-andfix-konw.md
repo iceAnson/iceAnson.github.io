@@ -1,4 +1,9 @@
-﻿
+﻿---
+layout: post
+title: 支付宝Andfix 原理解析
+description: 支付宝Andfix 原理解析
+category: blog
+---
 ##支付宝Andfix 原理解析 ##
        
 使用参考地址：
