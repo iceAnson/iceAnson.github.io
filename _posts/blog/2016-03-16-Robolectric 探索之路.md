@@ -1,3 +1,10 @@
+---
+layout: post
+title: Roboletric探索之路，从抗拒到依赖
+description: Roboletric Android Unit Testing
+category: blog
+---
+
 #Roboletric探索之路，从抗拒到依赖
 
 ##我为什么以前抗拒Android Unit Testing
