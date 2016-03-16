@@ -188,6 +188,9 @@ extend TestCase:这个必须继承的类；
 Done
 ----------
 QQ:452825089
-wechat:ice38987315
+
 mail:452825089@qq.com
+
+wechat:ice3897315
+
 blog:http://iceAnson.github.io
