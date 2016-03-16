@@ -5,33 +5,26 @@ description: Roboletric Android Unit Testing
 category: blog
 ---
 
-#Roboletric探索之路，从抗拒到依赖
-
 ##我为什么以前抗拒Android Unit Testing
-1、懒，人类最大的天敌；
 
-2、不是不知道什么是单元测试，只是需求太多了，哪有时间~；
-
-3、需要学习单元测试的语言或者框架，不熟悉，所以从没尝试过；
-	
-4、没见到单元测试的好处，一想到要花时间就望而却步；
-
-至少只是我个人之前的感受，我相信有很多的程序猿同胞们都跟我有类似的感受；
+- 1、懒，人类最大的天敌；
+- 2、不是不知道什么是单元测试，只是需求太多了，哪有时间~；
+- 3、需要学习单元测试的语言或者框架，不熟悉，所以从没尝试过；
+- 4、没见到单元测试的好处，一想到要花时间就望而却步；
+- 5、至少只是我个人之前的感受，我相信有很多的程序猿同胞们都跟我有类似的感受；
 	
 ##既然抗拒，为什么现在要尝试Android Unit Testing呢
 
 大势所趋，bug量的增多不得不让我们提高代码的质量，不是我们完不成功能，只是我们验证功能的成本实在太高，随着工程的复杂度的增加，run一次模拟器或者真机，在window上的花费至少是一分钟以上，甚至三四分钟，所以有些人偷懒，包括我，有时候把那些看上去“没有问题的代码”提交到了主干上，随之产生了bug，然后进入修复bug-》run-》修复bug->run；花费了更多的时间和资源；
+>我们的燃眉之急是要尽快改善这个问题，从根源着手，就是【增强自测】
 
-	我们的燃眉之急是要尽快改善这个问题，从根源着手，就是【增强自测】；
-	
 ##测试手段
 
 现在是个讲究效率的时代，我们希望能够快速高效的验证我们的代码逻辑是否有问题，我们不希望验证一个简单的逻辑或者一个方法是否有效，是通过run一次模拟器或者整个工程实现的，这样花费的时间太长了，降低了开发效率；
 
-###所以我们要解决的第一个痛点是，如何快速验证
+- 1、所以我们要解决的第一个痛点是，如何快速验证；
 
 我们选择了Robolectric单元测试框架，原因有好几个，最大的原因是：
-
 
 >Robolectric
 Test-Drive Your Android Code
@@ -48,7 +41,6 @@ Running tests on an Android emulator or device is slow! Building, deploying, and
 [Robolectic介绍](https://hkliya.gitbooks.io/unit-test-android-with-robolectric/content/0-introduction.html)
 
 ##Talk is cheap ,show me the code
-
 ###环境配置
 Android Stuido 1.5.1
 
