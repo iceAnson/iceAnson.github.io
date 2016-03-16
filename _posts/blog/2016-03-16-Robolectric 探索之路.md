@@ -185,3 +185,6 @@ extend TestCase:这个必须继承的类；
 大量的测试例子都在github的源码里边，可以详细参照；
 [Robolectric Github 源码地址](https://github.com/robolectric/robolectric)；
 
+Done
+----------
+blog:http://iceAnson.github.io
