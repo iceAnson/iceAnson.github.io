@@ -81,7 +81,7 @@ testCompile ’org.robolectric:robolectric:3.0’
 
 @RunWith(RobolectricGradleTestRunner.class)；声明使用哪个Runner,使用GradleTestRunner会自动帮我们加载所需要的插件，一般我们配这个就可以；
 
-@Config(constants = BuildConfig.class,sdk=18)；配置测试项目的BuildConfig和sdk版本，BuildConfig是编译器自动生成；@Config还可以配置很多其他的熟悉，比如Mainfest,Applciation,assert资源等等，具体了解可参见
+@Config(constants = BuildConfig.class,sdk=18)；配置测试项目的BuildConfig和sdk版本，BuildConfig是编译器自动生成；@Config还可以配置很多其他的熟悉，比如Manifest,Application,assert资源等等，具体了解可参见
 [http://robolectric.org/configuring/](http://robolectric.org/configuring/)；
 
 extend TestCase:这个必须继承的类；	
@@ -109,7 +109,7 @@ extend TestCase:这个必须继承的类；
 	执行@Test,
 	执行@After
 	所以如果没有没有执行初始化逻辑，@test很有可能会失败；
-	或者appliation里调用了so或者初始化了webview，也会失败；
+	或者application里调用了so或者初始化了webview，也会失败；
 	一般在@Before我们做的是初始化的工作和构造一些模拟数据的操作；
 @Test
 
@@ -137,17 +137,17 @@ extend TestCase:这个必须继承的类；
                 List<HttpDnsModel> list = mHttpDnsCacheManager.getHttpDnsModels();
                 assertEquals(list.size(), 2);
                 //验证解析格式
-                String domain = mHttpDnsCacheManager.getDomian("http://api.myms.meiyou.com/configs");
+                String domain = mHttpDnsCacheManager.getDomain("http://api.myms.meiyou.com/configs");
                 assertEquals(domain,"api.myms.meiyou.com");
                 //验证解析格式
-                domain = mHttpDnsCacheManager.getDomian("https://api.myms.meiyou.com/configs");
+                domain = mHttpDnsCacheManager.getDomain("https://api.myms.meiyou.com/configs");
                 assertEquals(domain, "api.myms.meiyou.com");
                 //验证命中缓存
                 HttpDnsModel model =  mHttpDnsCacheManager.getFromCache("api.myms.meiyou.com/configs");
                 assertEquals(model!=null,true);
                 assertEquals(model.getIp(), "211.151.209.71");
                 //验证替换
-                String result = mHttpDnsCacheManager.replaceDomianToIp("http://api.myms.meiyou.com/configs", domain, model.getIp());
+                String result = mHttpDnsCacheManager.replaceDomainToIp("http://api.myms.meiyou.com/configs", domain, model.getIp());
                 assertEquals("http://211.151.209.71/configs",result);
 
         }
