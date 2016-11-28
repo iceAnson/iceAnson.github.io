@@ -6,8 +6,6 @@ category: blog
 ---
 
 # Android so调试-你需要的从零开始
->本文为 GcsSloop 原创文章，采用 [知识共享 署名-非商业性使用-禁止演绎 4.0 国际 许可协议](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh) 发布，转载请注明作者以及原链。
-> 本文在 [DiyCode](http://www.diycode.cc/topics/392)  和 [ice_Anson的个人博客](http://iceanson.github.io/) 同时首发，关注作者的 [DiyCode帐号](http://www.diycode.cc/sloop) 或者 [作者微博](http://weibo.com/iceanson?is_all=1) 可第一时间收到新文章推送。
 
 ## 前言
 	
