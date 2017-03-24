@@ -5,7 +5,6 @@ description: 不坚持，怎么能知道绝望呢~
 category: blog
 ---
 
-# 百转千回的too many classes in --main-dex-list
 
 ## 背景：
 
@@ -189,3 +188,11 @@ afterEvaluate {
 
 
 
+----------
+QQ:452825089
+
+mail:452825089@qq.com
+
+wechat:ice3897315
+
+blog:http://iceAnson.github.io
